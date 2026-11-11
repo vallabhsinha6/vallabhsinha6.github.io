@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fdfdfb">
+<title>Case Studies — Vallabh Sinha</title>
+<style>
+:root{--blue:#35bfdc;--ink:#141719;--muted:#657176;--paper:#fdfdfb;--mint:#9fe0c7;--sun:#f7d98b;--pink:#ea1760;--grid:rgba(41,54,61,.075)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+.top{height:72px;position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #ddd;display:flex;align-items:stretch;padding:0 22px;box-shadow:0 3px 14px #00000010}.mark{width:72px;display:grid;place-items:center;color:#111;text-decoration:none}.mark svg{width:44px;height:44px;display:block}.nav{display:flex;align-items:stretch;gap:0}.nav a{display:flex;align-items:center;gap:10px;padding:0 19px;color:#16191b;text-decoration:none;font-size:15px;font-weight:700;white-space:nowrap}.nav a.active{background:var(--blue)}.nav .ico{width:25px;height:25px;display:block;flex:0 0 25px}.right{margin-left:auto;display:flex;align-items:center;gap:12px}.pill{background:#f2f2f2;border-radius:50%;width:48px;height:48px;display:grid;place-items:center;font-size:12px;font-weight:800}.avatar{border:2px solid var(--blue);color:var(--blue);width:45px;height:45px;border-radius:50%;display:grid;place-items:center;font-weight:900}.contact{border:2px solid #111;padding:13px 20px;text-decoration:none;color:#111;font-weight:800;margin-left:4px;white-space:nowrap}.contact:hover{background:#111;color:white}
+.ruler{height:42px;border-bottom:1px solid #ccc;background:repeating-linear-gradient(90deg,transparent 0,transparent 98px,#ececec 99px,#ececec 100px);display:flex;justify-content:space-around;align-items:center;color:#aaa;font-size:10px;padding-left:7%}.board{min-height:100vh;padding:24px 6% 120px;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:100px 100px}
+.page-kicker{margin:22px 0 18px 2%;font:700 13px ui-monospace,monospace;letter-spacing:.12em;color:#506068}.page-title{font-size:clamp(76px,12vw,230px);line-height:.78;letter-spacing:-.095em;font-weight:950;text-transform:uppercase;margin:0 0 72px;white-space:nowrap}.intro-row{display:flex;align-items:end;justify-content:space-between;gap:30px;margin:0 2% 84px}.intro-row p{max-width:520px;margin:0;color:#526067;font-size:18px;line-height:1.55}.route-note{background:var(--sun);padding:16px 20px;transform:rotate(-2deg);font:700 12px ui-monospace,monospace;white-space:nowrap}
+.case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:130px 4vw;align-items:start}.case-card{--accent:var(--blue);position:relative;padding:66px 22px 28px;background:#ececec;min-width:0}.case-card:nth-child(even){margin-top:58px}.case-tab{position:absolute;left:0;top:-54px;height:55px;width:42%;padding:17px 22px;background:#ececec;font:700 13px ui-monospace,monospace;clip-path:polygon(0 0,72% 0,100% 100%,0 100%);white-space:nowrap}.case-meta{display:flex;align-items:center;gap:12px;margin:0 0 24px;font:700 13px ui-monospace,monospace;letter-spacing:.04em}.case-meta:before{content:"";width:12px;height:12px;border-radius:50%;background:var(--ink)}.case-visual{position:relative;overflow:hidden;aspect-ratio:1.48;background:var(--accent);display:grid;place-items:center}.case-visual:after{content:"";position:absolute;inset:0;border:1px solid #1112;pointer-events:none}.visual-inhouse{--accent:#35bfdc;background:linear-gradient(140deg,#35bfdc 0 42%,#a9e9f6 42% 100%)}.visual-parcelio{--accent:#edb62f;background:linear-gradient(130deg,#f7d98b,#edb62f 60%,#f5c84e)}.visual-longway{--accent:#9fe0c7;background:linear-gradient(170deg,#a7e4d2 0 48%,#62bfa4 48% 62%,#e8cb8e 62%)}.visual-empty{--accent:#dcecf0;background:#e8f3f5;border:2px dashed #9fb9c2}.mock-board{position:relative;width:76%;height:73%;padding:18px;background:#fbfcfc;border:2px solid #111;box-shadow:10px 12px 0 #1112;transform:rotate(-2deg)}.mock-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid #c8d4d7;font:700 10px ui-monospace,monospace;letter-spacing:.08em}.mock-dot{width:9px;height:9px;border-radius:50%;background:var(--pink);box-shadow:15px 0 0 var(--sun),30px 0 0 var(--mint)}.mock-content{display:grid;grid-template-columns:1fr 1.25fr;gap:14px;height:calc(100% - 28px);padding-top:14px}.mock-lines{display:flex;flex-direction:column;gap:8px}.mock-lines i{height:8px;background:#d4e2e5}.mock-lines i:first-child{height:18px;background:#a7ddeb;width:68%}.mock-panel{background:#e4f3f6;border:1px solid #bddde5;display:grid;place-items:center;color:#397e91;font:700 9px ui-monospace,monospace}.parcel-art{position:relative;width:72%;height:74%;display:grid;place-items:center}.route-line{position:absolute;left:12%;right:10%;top:48%;height:3px;border-top:3px dashed #111;transform:rotate(-15deg)}.parcel-box{position:absolute;width:94px;height:80px;background:#fbf0c8;border:3px solid #111;transform:rotate(8deg);box-shadow:8px 8px 0 #1112}.parcel-box:before{content:"";position:absolute;left:45%;top:-3px;width:17px;height:80px;background:#35bfdc;border-left:2px solid #111;border-right:2px solid #111}.pin{position:absolute;width:25px;height:25px;border:3px solid #111;border-radius:50% 50% 50% 0;background:var(--pink);transform:rotate(-45deg)}.pin-a{left:4%;top:24%}.pin-b{right:7%;bottom:17%;background:var(--blue)}.journey-art{position:relative;width:88%;height:85%;background:linear-gradient(#d7f1ed 0 53%,#a9d4bf 53% 62%,#d9bb82 62%);overflow:hidden}.mountain{position:absolute;bottom:33%;width:0;height:0;border-left:120px solid transparent;border-right:120px solid transparent;border-bottom:130px solid #75b6a1}.mountain.one{left:8%}.mountain.two{right:-5%;border-left-width:150px;border-right-width:150px;border-bottom-width:170px;border-bottom-color:#8bcbb3}.journey-path{position:absolute;width:62%;height:48%;left:20%;top:33%;border:4px dashed #fff;border-left-color:transparent;border-bottom-color:transparent;border-radius:50%;transform:rotate(16deg)}.journey-dot{position:absolute;left:60%;top:36%;width:18px;height:18px;border-radius:50%;background:var(--pink);border:3px solid #111}.empty-mark{font:700 15px ui-monospace,monospace;letter-spacing:.12em;color:#53717b;text-align:center}.case-info{padding:24px 6px 4px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}.case-info h2{font-size:clamp(34px,4.2vw,58px);line-height:.95;letter-spacing:-.07em;font-weight:500;margin:0}.case-info p{grid-column:1/-1;max-width:440px;margin:0;color:#4f5a5e;font-size:16px;line-height:1.5}.case-link{grid-column:1/-1;display:inline-flex;align-items:center;gap:10px;width:max-content;margin-top:7px;color:#111;text-decoration:none;border-bottom:1px solid #111;padding-bottom:6px;font:700 12px ui-monospace,monospace}.case-link:hover{color:#147e99;border-color:#147e99}.case-empty .case-info p{color:#738187}.case-empty{--accent:#dcecf0}.foot{padding:26px 7%;color:#6a777c;font:700 11px ui-monospace,monospace;letter-spacing:.08em;border-top:1px solid #dfe7e9;background:#fff}
+@media(max-width:900px){.right .pill{display:none}.nav a{padding:0 12px}.case-grid{gap:100px 3vw}.case-card{padding:54px 16px 22px}.case-tab{width:52%}.page-title{font-size:clamp(70px,14vw,145px)}}
+@media(max-width:680px){.top{height:62px;padding:0 10px}.mark{width:38px;font-size:25px}.nav{overflow-x:auto}.nav a{gap:5px;padding:0 9px;font-size:10px}.nav .ico{font-size:16px}.right{gap:6px}.avatar{width:34px;height:34px;font-size:12px}.contact{font-size:10px;padding:9px 10px}.board{padding:18px 5% 80px}.page-title{white-space:normal;font-size:clamp(60px,17vw,105px);line-height:.84;margin-bottom:44px}.page-kicker{font-size:10px}.intro-row{display:block;margin-bottom:68px}.intro-row p{font-size:16px}.route-note{display:inline-block;margin-top:18px}.case-grid{grid-template-columns:1fr;gap:95px}.case-card:nth-child(even){margin-top:0}.case-visual{aspect-ratio:1.25}.case-info h2{font-size:42px}.case-card{padding:52px 14px 20px}.case-tab{top:-48px;height:49px;font-size:11px;padding:15px 16px;width:58%}}
+
+[data-drag]{cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none}
+[data-drag-ignore]{cursor:auto;user-select:text;-webkit-user-select:text;touch-action:auto}
+.dragging-card{cursor:grabbing!important;user-select:none!important;-webkit-user-select:none!important;transition:none!important;z-index:40!important}
+</style>
+<style>
+.foot{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.foot-connect{color:inherit;text-decoration:none;font:700 12px ui-monospace,monospace;letter-spacing:.08em;border-bottom:1px solid currentColor;padding-bottom:4px}
+.foot-connect:hover{color:#1688a3}
+</style>
+<style data-eye-cursor>
+.eye-cursor{position:fixed;z-index:100000;left:0;top:0;width:48px;height:30px;display:flex;align-items:center;justify-content:center;gap:3px;pointer-events:none;opacity:0;transform:translate3d(-100px,-100px,0);transition:opacity .16s ease;will-change:transform}
+.eye-cursor.is-visible{opacity:1}
+.eye-cursor__eye{position:relative;display:block;width:20px;height:23px;border:2px solid #141719;border-radius:52% 48% 48% 52%;background:#fff;box-shadow:0 1px 0 #14171918}
+.eye-cursor__eye:nth-child(2){border-radius:48% 52% 52% 48%}
+.eye-cursor__pupil{position:absolute;left:50%;top:50%;width:7px;height:9px;border-radius:50%;background:#141719;transform:translate(calc(-50% + var(--gaze-x,0px)),calc(-50% + var(--gaze-y,0px)));transition:transform .1s cubic-bezier(.2,.7,.2,1)}
+.eye-cursor__pupil:after{content:"";position:absolute;left:1px;top:1px;width:2px;height:2px;border-radius:50%;background:#35bfdc}
+@media(pointer:fine){body.has-eye-cursor,body.has-eye-cursor *{cursor:none!important}body.has-eye-cursor input,body.has-eye-cursor textarea,body.has-eye-cursor select,body.has-eye-cursor [contenteditable="true"]{cursor:text!important}}
+@media(prefers-reduced-motion:reduce){.eye-cursor__pupil{transition:none}}
+</style>
+<style data-drag-hand-cursor>
+.eye-cursor__hand{position:absolute;right:-9px;bottom:-11px;width:24px;height:27px;opacity:0;transform:translate(-4px,4px) rotate(-16deg) scale(.72);transform-origin:bottom center;transition:opacity .14s ease,transform .18s cubic-bezier(.2,.75,.25,1);filter:drop-shadow(0 1px 1px #14171930)}
+.eye-cursor.is-drag-target .eye-cursor__hand,.eye-cursor.is-dragging .eye-cursor__hand{opacity:1;transform:translate(0,0) rotate(-8deg) scale(1)}
+.eye-cursor__hand path:not(.eye-cursor__hand-cuff){fill:#fff;stroke:#141719;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round}
+.eye-cursor__hand-cuff{fill:none;stroke:#35bfdc;stroke-width:2.6;stroke-linecap:round}
+.eye-cursor__hand-grab{display:none}
+.eye-cursor.is-dragging .eye-cursor__hand-open{display:none}
+.eye-cursor.is-dragging .eye-cursor__hand-grab{display:block}
+@media(prefers-reduced-motion:reduce){.eye-cursor__hand{transition:none}}
+</style>
+</head>
+<body><div class="eye-cursor" id="eye-cursor" aria-hidden="true"><span class="eye-cursor__eye"><i class="eye-cursor__pupil"></i></span><span class="eye-cursor__eye"><i class="eye-cursor__pupil"></i></span><svg class="eye-cursor__hand" viewBox="0 0 32 34" aria-hidden="true"><g class="eye-cursor__hand-open"><path d="M9 16V7.5a2 2 0 0 1 4 0V14 5.5a2 2 0 0 1 4 0V14 7.5a2 2 0 1 1 4 0V15 11a2 2 0 0 1 4 0v7.5c0 5.2-3.8 9-8.6 9h-1.1c-3.1 0-5.9-1.6-7.4-4.3l-3.1-5.4a2 2 0 0 1 3.5-2l2 3.2z"/><path class="eye-cursor__hand-cuff" d="m11.2 26.2 5.6 3.1"/></g><g class="eye-cursor__hand-grab"><path d="M8.5 15.5V12a2 2 0 0 1 4 0v3.5-5a2 2 0 1 1 4 0v5-4a2 2 0 1 1 4 0v4-2.5a2 2 0 0 1 4 0v6c0 5-3.5 8.5-8.2 8.5h-1.5c-3 0-5.3-1.3-7-3.8l-2.1-3a2 2 0 0 1 3.2-2.4l1.8 2.1z"/><path class="eye-cursor__hand-cuff" d="m11.2 26.2 5.6 3.1"/></g></svg></div>
+<header class="top"><a class="mark" href="vallabh-portfolio-home.html#home" aria-label="Vallabh home"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 34a19 19 0 0 1 38 0M12 34a12 12 0 0 1 24 0M19 34a5 5 0 0 1 10 0" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round"/></svg></a><nav class="nav" aria-label="Main navigation"><a href="vallabh-portfolio-home.html#home"><svg class="ico ico-home" viewBox="0 0 40 40" aria-hidden="true"><path fill="currentColor" d="M3 18 20 4l17 14v18H23V25h-6v11H3V18Z"/></svg> HOME</a><a href="vallabh-about.html"><svg class="ico ico-about" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><ellipse cx="20" cy="8" rx="4.7" ry="7.1"/><ellipse cx="20" cy="8" rx="4.7" ry="7.1" transform="rotate(60 20 20)"/><ellipse cx="20" cy="8" rx="4.7" ry="7.1" transform="rotate(120 20 20)"/><ellipse cx="20" cy="8" rx="4.7" ry="7.1" transform="rotate(180 20 20)"/><ellipse cx="20" cy="8" rx="4.7" ry="7.1" transform="rotate(240 20 20)"/><ellipse cx="20" cy="8" rx="4.7" ry="7.1" transform="rotate(300 20 20)"/></g><circle cx="20" cy="20" r="4.1" fill="white"/></svg> ABOUT</a><a class="active" href="#case-top"><svg class="ico ico-case" viewBox="0 0 40 40" aria-hidden="true"><path fill="currentColor" d="M6 3h28v5c0 4.6-5.5 8-12 9.3 6.5 1.3 12 4.7 12 9.3v5c0 4.4-5.5 7.4-14 7.4S6 35.9 6 31.6v-5c0-4.6 5.5-8 12-9.3C11.5 16 6 12.6 6 8V3Z"/></svg> CASE STUDY</a><a href="vallabh-playground.html"><svg class="ico ico-playground" viewBox="0 0 40 40" aria-hidden="true"><path fill="currentColor" d="M3 31h9V22h9v-9h9V4h7v33H3z"/></svg> PLAYGROUND</a></nav><div class="right"><span class="pill">EN</span><span class="pill">IN</span><span class="avatar" aria-label="Vallabh">VS</span><a class="contact" href="vallabh-contact.html#contact-top">♥ &nbsp; CONTACT</a></div></header>
+<div class="ruler" aria-hidden="true"><span>0</span><span>100</span><span>200</span><span>300</span><span>400</span><span>500</span><span>600</span><span>700</span><span>800</span><span>900</span><span>1000</span><span>1100</span><span>1200</span></div>
+<main class="board" id="case-top">
+<p class="page-kicker">VALLABH SINHA · SELECTED WORK</p>
+<h1 class="page-title">CASE STUDIES</h1>
+<div class="intro-row"><p>A few projects from my design journey. I’m shaping each case study to show the thinking and details behind the work.</p><div class="route-note">FOLLOW THE THREAD ↗</div></div>
+<div class="case-grid">
+<article class="case-card" data-drag style="--accent:#35bfdc"><div class="case-tab">◩ &nbsp; PROJECT 01</div><div class="case-meta" data-drag-ignore>01 / INHOUSE</div><div class="case-visual visual-inhouse" role="img" aria-label="Abstract Inhouse project preview"><div class="mock-board"><div class="mock-top"><span>INHOUSE · WORKSPACE</span><span class="mock-dot"></span></div><div class="mock-content"><div class="mock-lines"><i></i><i></i><i></i><i></i></div><div class="mock-panel">PROJECT PREVIEW</div></div></div></div><div class="case-info" data-drag-ignore><h2>Inhouse</h2><p>Case study details are being added. The project folder is ready for the full story.</p><a class="case-link" href="vallabh-portfolio-home.html#project-inhouse">OPEN PROJECT FOLDER <span>↗</span></a></div></article>
+<article class="case-card" data-drag style="--accent:#edb62f"><div class="case-tab">◩ &nbsp; PROJECT 02</div><div class="case-meta" data-drag-ignore>02 / PARCELIO</div><div class="case-visual visual-parcelio" role="img" aria-label="Abstract Parcelio route and package illustration"><div class="parcel-art"><div class="route-line"></div><div class="parcel-box"></div><span class="pin pin-a"></span><span class="pin pin-b"></span></div></div><div class="case-info" data-drag-ignore><h2>Parcelio</h2><p>Case study details are being added. Follow the route back to the project folder.</p><a class="case-link" href="vallabh-portfolio-home.html#project-parcelio">OPEN PROJECT FOLDER <span>↗</span></a></div></article>
+<article class="case-card" data-drag style="--accent:#9fe0c7"><div class="case-tab">◩ &nbsp; PROJECT 03</div><div class="case-meta" data-drag-ignore>03 / IN PROGRESS</div><div class="case-visual visual-longway" role="img" aria-label="Abstract landscape and route illustration for Long Way to Go"><div class="journey-art"><span class="mountain one"></span><span class="mountain two"></span><span class="journey-path"></span><span class="journey-dot"></span></div></div><div class="case-info" data-drag-ignore><h2>Long Way to Go</h2><p>A project still unfolding—its case study will take shape as the journey continues.</p><a class="case-link" href="vallabh-portfolio-home.html#project-long-way">OPEN PROJECT FOLDER <span>↗</span></a></div></article>
+<article class="case-card case-empty" data-drag><div class="case-tab">◩ &nbsp; PROJECT 04</div><div class="case-meta" data-drag-ignore>04 / RESERVED</div><div class="case-visual visual-empty" role="img" aria-label="Empty placeholder for a future project"><div class="empty-mark">YOUR NEXT PROJECT<br>GOES HERE</div></div><div class="case-info" data-drag-ignore><h2>Coming soon</h2><p>This folder is being saved for a future project.</p></div></article>
+</div>
+</main>
+<footer class="foot">VALLABH SINHA · PORTFOLIO · KEEP WANDERING, KEEP WONDERING.<a class="foot-connect" href="vallabh-contact.html#contact-top">LET’S CONNECT ↗</a></footer>
+<script>
+(function(){
+  let activeDrag = null;
+  let cancelledClick = null;
+  const margin = 12;
+  const topClearance = 76;
+
+  function getBounds(target){
+    const flush = target.hasAttribute('data-drag-flush');
+    const edge = flush ? 0 : margin;
+    const bounds = {left: edge, top: flush ? 72 : Math.max(edge, topClearance), right: window.innerWidth - edge, bottom: window.innerHeight - edge};
+    let ancestor = target.parentElement;
+    while(ancestor && ancestor !== document.documentElement){
+      const style = getComputedStyle(ancestor);
+      const rect = ancestor.getBoundingClientRect();
+      if(style.overflowX !== 'visible'){
+        bounds.left = Math.max(bounds.left, rect.left);
+        bounds.right = Math.min(bounds.right, rect.right);
+      }
+      if(style.overflowY !== 'visible'){
+        bounds.top = Math.max(bounds.top, rect.top);
+        bounds.bottom = Math.min(bounds.bottom, rect.bottom);
+      }
+      ancestor = ancestor.parentElement;
+    }
+    return bounds;
+  }
+
+  function clampDelta(start, size, low, high, delta){
+    const span = Math.max(0, high - low);
+    if(size > span) return 0;
+    const minPosition = low;
+    const maxPosition = high - size;
+    const proposed = start + delta;
+    return Math.max(minPosition, Math.min(maxPosition, proposed)) - start;
+  }
+
+  function applyDrag(drag, pointerX, pointerY){
+    const bounds = getBounds(drag.target);
+    const rect = drag.startRect;
+    const dx = clampDelta(rect.left, rect.width, bounds.left, bounds.right, pointerX - drag.startX);
+    const dy = clampDelta(rect.top, rect.height, bounds.top, bounds.bottom, pointerY - drag.startY);
+    const x = drag.baseX + dx;
+    const y = drag.baseY + dy;
+    drag.target.dataset.dragX = String(x);
+    drag.target.dataset.dragY = String(y);
+    drag.target.style.translate = x + 'px ' + y + 'px';
+    if(Math.abs(dx) + Math.abs(dy) > 5) drag.moved = true;
+  }
+
+  document.addEventListener('pointerdown', function(event){
+    if(event.button !== undefined && event.button !== 0) return;
+    const item = event.target.closest('[data-drag]');
+    if(!item) return;
+    if(event.target.closest('[data-drag-ignore]')) return;
+    const interactive = event.target.closest('a,button,input,textarea,select,[contenteditable="true"]');
+    if(interactive && interactive !== item) return;
+    const target = item.dataset.dragTarget ? document.querySelector(item.dataset.dragTarget) : item;
+    if(!target) return;
+    const rect = target.getBoundingClientRect();
+    activeDrag = {
+      item: item,
+      target: target,
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      baseX: parseFloat(target.dataset.dragX || '0'),
+      baseY: parseFloat(target.dataset.dragY || '0'),
+      startRect: rect,
+      moved: false,
+      oldZ: target.style.zIndex
+    };
+    item.setPointerCapture(event.pointerId);
+    target.classList.add('dragging-card');
+    target.style.zIndex = '40';
+  }, true);
+
+  document.addEventListener('pointermove', function(event){
+    if(!activeDrag || event.pointerId !== activeDrag.pointerId) return;
+    applyDrag(activeDrag, event.clientX, event.clientY);
+  }, true);
+
+  function finishDrag(event){
+    if(!activeDrag || (event && event.pointerId !== activeDrag.pointerId)) return;
+    const drag = activeDrag;
+    if(drag.moved){
+      cancelledClick = {item: drag.item, x: event ? event.clientX : drag.startX, y: event ? event.clientY : drag.startY, until: Date.now() + 500};
+    }
+    drag.target.classList.remove('dragging-card');
+    drag.target.style.zIndex = drag.oldZ;
+    if(drag.item.hasPointerCapture && drag.item.hasPointerCapture(drag.pointerId)) drag.item.releasePointerCapture(drag.pointerId);
+    activeDrag = null;
+  }
+
+  document.addEventListener('pointerup', finishDrag, true);
+  document.addEventListener('pointercancel', finishDrag, true);
+  document.addEventListener('click', function(event){
+    if(!cancelledClick) return;
+    const ignored = cancelledClick;
+    cancelledClick = null;
+    if(Date.now() <= ignored.until && (event.target === ignored.item || ignored.item.contains(event.target)) && Math.abs(event.clientX - ignored.x) < 18 && Math.abs(event.clientY - ignored.y) < 18){
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
+  }, true);
+
+  document.addEventListener('dragstart', function(event){
+    if(event.target.closest('[data-drag]')) event.preventDefault();
+  });
+
+  window.addEventListener('resize', function(){
+    document.querySelectorAll('[data-drag][data-drag-x], [data-drag-target][data-drag-x]').forEach(function(item){
+      const target = item.dataset.dragTarget ? document.querySelector(item.dataset.dragTarget) : item;
+      if(!target) return;
+      const rect = target.getBoundingClientRect();
+      const bounds = getBounds(target);
+      const dx = clampDelta(rect.left, rect.width, bounds.left, bounds.right, 0);
+      const dy = clampDelta(rect.top, rect.height, bounds.top, bounds.bottom, 0);
+      if(dx || dy){
+        const x = parseFloat(target.dataset.dragX || '0') + dx;
+        const y = parseFloat(target.dataset.dragY || '0') + dy;
+        target.dataset.dragX = String(x);
+        target.dataset.dragY = String(y);
+        target.style.translate = x + 'px ' + y + 'px';
+      }
+    });
+  });
+})();
+</script>
+<script data-eye-cursor-script>
+(function(){
+  const eyes=document.getElementById('eye-cursor');
+  if(!eyes||!window.matchMedia('(pointer:fine)').matches)return;
+  const pupils=[...eyes.querySelectorAll('.eye-cursor__pupil')];
+  let previousX=0,previousY=0,hasPrevious=false;
+  function move(event){
+    if(event.pointerType==='touch')return;
+    const editable=event.target&&event.target.closest('input,textarea,select,[contenteditable="true"]');
+    if(editable){eyes.classList.remove('is-visible');document.body.classList.remove('has-eye-cursor');return;}
+    document.body.classList.add('has-eye-cursor');
+    eyes.classList.add('is-visible');
+    eyes.style.transform='translate3d('+(event.clientX+11)+'px,'+(event.clientY+9)+'px,0)';
+    if(hasPrevious){
+      const dx=event.clientX-previousX,dy=event.clientY-previousY;
+      const length=Math.hypot(dx,dy)||1;
+      const gazeX=Math.max(-2.8,Math.min(2.8,(dx/length)*2.8));
+      const gazeY=Math.max(-2.8,Math.min(2.8,(dy/length)*2.8));
+      eyes.style.setProperty('--gaze-x',gazeX+'px');
+      eyes.style.setProperty('--gaze-y',gazeY+'px');
+    }
+    previousX=event.clientX;previousY=event.clientY;hasPrevious=true;
+  }
+  document.addEventListener('pointermove',move,{passive:true});
+  document.addEventListener('pointerleave',function(){eyes.classList.remove('is-visible');document.body.classList.remove('has-eye-cursor');},{passive:true});
+  document.addEventListener('pointerover',function(event){
+    if(event.target&&event.target.closest('input,textarea,select,[contenteditable="true"]')){
+      eyes.classList.remove('is-visible');document.body.classList.remove('has-eye-cursor');
+    }
+  },{passive:true});
+})();
+</script>
+<script data-drag-hand-cursor-script>
+(function(){
+  const cursor=document.getElementById('eye-cursor');
+  if(!cursor||!window.matchMedia('(pointer:fine)').matches)return;
+  const ignored='[data-drag-ignore],a,button,input,textarea,select,[contenteditable="true"]';
+  let dragging=false,pointerId=null;
+  function draggableAt(target){
+    if(!target||!target.closest||target.closest(ignored))return false;
+    return !!target.closest('[data-drag]');
+  }
+  function syncTarget(target){cursor.classList.toggle('is-drag-target',draggableAt(target));}
+  document.addEventListener('pointermove',function(event){
+    if(event.pointerType==='touch')return;
+    if(!dragging)syncTarget(document.elementFromPoint(event.clientX,event.clientY)||event.target);
+  },{passive:true});
+  document.addEventListener('pointerover',function(event){if(!dragging)syncTarget(event.target);},{passive:true});
+  document.addEventListener('pointerdown',function(event){
+    if(event.pointerType==='touch'||(event.button!==undefined&&event.button!==0)||!draggableAt(event.target))return;
+    dragging=true;pointerId=event.pointerId;cursor.classList.add('is-dragging');
+  },true);
+  function release(event){
+    if(!dragging||(event&&pointerId!==null&&event.pointerId!==pointerId))return;
+    dragging=false;pointerId=null;cursor.classList.remove('is-dragging');
+    if(event&&Number.isFinite(event.clientX)&&Number.isFinite(event.clientY))syncTarget(document.elementFromPoint(event.clientX,event.clientY)||event.target);
+    else cursor.classList.remove('is-drag-target');
+  }
+  document.addEventListener('pointerup',release,true);
+  document.addEventListener('pointercancel',release,true);
+  document.addEventListener('pointerleave',function(){cursor.classList.remove('is-drag-target','is-dragging');dragging=false;pointerId=null;},{passive:true});
+})();
+</script>
+</body>
+</html>

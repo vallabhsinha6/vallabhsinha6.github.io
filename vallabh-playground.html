@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fdfdfb">
+<title>Playground — Vallabh Sinha</title>
+<style>
+:root{--blue:#35bfdc;--ink:#141719;--paper:#fdfdfb;--mint:#9fe0c7;--sun:#f7d98b;--pink:#ea1760;--grid:rgba(41,54,61,.075)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+.top{height:72px;position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #ddd;display:flex;align-items:stretch;padding:0 22px;box-shadow:0 3px 14px #00000010}.mark{width:72px;display:grid;place-items:center;color:#111;text-decoration:none}.mark svg{width:44px;height:44px;display:block}.nav{display:flex;align-items:stretch;gap:0}.nav a{display:flex;align-items:center;gap:10px;padding:0 19px;color:#16191b;text-decoration:none;font-size:15px;font-weight:700;white-space:nowrap}.nav a.active{background:var(--blue)}.nav .ico{width:25px;height:25px;display:block;flex:0 0 25px}.right{margin-left:auto;display:flex;align-items:center;gap:12px}.pill{background:#f2f2f2;border-radius:50%;width:48px;height:48px;display:grid;place-items:center;font-size:12px;font-weight:800}.avatar{border:2px solid var(--blue);color:var(--blue);width:45px;height:45px;border-radius:50%;display:grid;place-items:center;font-weight:900}.contact{border:2px solid #111;padding:13px 20px;text-decoration:none;color:#111;font-weight:800;margin-left:4px;white-space:nowrap}.contact:hover{background:#111;color:white}
+.ruler{height:42px;border-bottom:1px solid #ccc;background:repeating-linear-gradient(90deg,transparent 0,transparent 98px,#ececec 99px,#ececec 100px);display:flex;justify-content:space-around;align-items:center;color:#aaa;font-size:10px;padding-left:7%}.playground{position:relative;min-height:1600px;overflow:hidden;background-color:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:100px 100px}.play-heading{position:absolute;left:7%;top:82px;font:700 13px ui-monospace,monospace;letter-spacing:.14em;color:#516168}.play-heading strong{display:block;margin-top:10px;font:700 30px 'Comic Sans MS',cursive;letter-spacing:0;color:#111;transform:rotate(-4deg)}
+.drag-item{touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;--rot:0deg;transform:rotate(var(--rot));transition:box-shadow .2s ease;will-change:transform}.drag-item:active{cursor:grabbing;z-index:20!important}.scrap{position:absolute;width:clamp(160px,17vw,244px);padding:11px 11px 35px;background:#fff;box-shadow:0 12px 28px #172a3020}.scrap:hover{box-shadow:0 18px 34px #172a3030}.scrap-art{position:relative;aspect-ratio:.92;overflow:hidden}.scrap-caption{text-align:center;padding-top:9px;font:italic 16px 'Comic Sans MS',cursive;color:#16191b}.photo-one{left:31%;top:24%;--rot:-2deg}.photo-two{left:45%;top:25%;--rot:5deg}.photo-three{left:59%;top:22%;--rot:4deg;width:clamp(145px,14vw,202px)}.photo-four{left:28%;top:51%;--rot:5deg;width:clamp(150px,15vw,220px)}.photo-five{left:42%;top:50%;--rot:4deg;width:clamp(155px,16vw,225px)}.music-card{left:59%;top:51%;--rot:-5deg}.sports-card{left:73%;top:48%;--rot:4deg}
+.art-room{background:linear-gradient(90deg,#d8b59a 0 34%,#385247 34% 100%)}.art-room:before{content:"";position:absolute;left:0;bottom:10%;width:100%;height:20%;background:linear-gradient(160deg,#e2d3c3 0 45%,#b8b09f 46%);}.room-table{position:absolute;bottom:16%;left:3%;width:74%;height:24%;background:#ded6c8;clip-path:polygon(0 0,100% 0,83% 100%,14% 100%)}.room-vase{position:absolute;right:18%;bottom:34%;width:22%;height:34%;border-radius:32% 32% 10% 10%;background:linear-gradient(90deg,#d58651,#f4c17d 55%,#bf713e);}.art-glass{background:linear-gradient(#efefed 0 58%,#d5d4ce 58% 100%)}.art-glass:before{content:"";position:absolute;bottom:12%;left:5%;right:4%;height:2px;background:#c4c2ba}.glass-cube{position:absolute;left:39%;top:37%;width:34%;height:39%;background:linear-gradient(135deg,#ffffffa8,#b7d4d577 55%,#fff9);border:1px solid #94b4b7;box-shadow:inset -12px -8px 20px #91b5b533}.art-sky{background:linear-gradient(#55b5de 0 58%,#e1ddf0 58% 100%)}.art-sky:before{content:"";position:absolute;left:-5%;right:10%;bottom:14%;height:39%;background:#9d8dbd;clip-path:polygon(0 25%,58% 0,100% 34%,100% 100%,0 100%)}.sky-window{position:absolute;left:44%;bottom:19%;width:32%;height:28%;background:#586a88;border:7px solid #baa8d4;box-shadow:inset 0 0 0 2px #dbe7fa}.art-warm{background:linear-gradient(130deg,#822324 0 55%,#f57741 55% 100%)}.warm-object{position:absolute;left:20%;bottom:18%;width:60%;height:27%;background:linear-gradient(90deg,#ef7945,#f1d3a0);box-shadow:0 12px 0 #421816;border-radius:3px}.warm-sphere{position:absolute;left:26%;bottom:39%;width:22%;aspect-ratio:1;border-radius:50%;background:#d96a3e}.art-green{background:linear-gradient(135deg,#dce8dc,#66a78b 50%,#ead5ad)}.leaf{position:absolute;width:40%;height:60%;background:#315a43;border-radius:100% 0 100% 0;transform:rotate(38deg)}.leaf.one{left:10%;top:10%}.leaf.two{right:7%;top:22%;transform:rotate(82deg);background:#477a59}.leaf.three{left:37%;bottom:0;transform:rotate(-24deg);background:#4d8b69}.music-art{background:linear-gradient(135deg,#283650,#7288ab)}.record{position:absolute;width:68%;aspect-ratio:1;border-radius:50%;left:16%;top:14%;background:repeating-radial-gradient(circle at center,#111 0 4px,#262b32 5px 7px);box-shadow:0 8px 18px #1116}.record:after{content:"♪";position:absolute;inset:36%;display:grid;place-items:center;border-radius:50%;background:var(--pink);font-size:26px;font-weight:800;color:#111}.music-label{position:absolute;bottom:11%;left:8%;right:8%;padding:7px;background:#fff;color:#111;text-align:center;font:700 10px ui-monospace,monospace;letter-spacing:.12em}.sport-art{background:repeating-linear-gradient(165deg,#1280ae 0 22%,#167ca5 22% 24%,#f5f7f6 24% 25%,#167ca5 25% 47%)}.sport-track{position:absolute;inset:12% 8%;border:3px solid #fff;border-radius:50%;transform:rotate(-15deg)}.sport-ball{position:absolute;left:35%;top:38%;width:31%;aspect-ratio:1;border-radius:50%;background:#f2aa33;border:3px solid #111;box-shadow:7px 9px 0 #1113}.sport-ball:after{content:"";position:absolute;left:47%;top:0;width:3px;height:100%;background:#111;transform:rotate(35deg)}
+.note{position:absolute;z-index:3;padding:13px 16px;box-shadow:0 7px 15px #00000010;font:16px 'Comic Sans MS',cursive;white-space:nowrap}.note-yellow{left:35%;top:21%;background:#f7df9a;--rot:-1deg}.note-blue{left:46%;top:44%;background:#9de3f2;--rot:4deg}.note-mint{left:63%;top:27%;background:#9fe0c7;--rot:5deg}.note-pink{left:24%;top:57%;background:#f4bed0;--rot:-3deg}.note-music{left:62%;top:48%;background:#f7df9a;--rot:3deg}.note-sport{left:77%;top:45%;background:#9de3f2;--rot:-4deg}
+.sticker{position:absolute;z-index:4;display:grid;place-items:center;filter:drop-shadow(0 3px 1px #0002);font-size:54px}.flower{left:46%;top:4%;--rot:9deg}.heart{left:32%;top:34%;--rot:-12deg;font-size:58px}.cactus{left:73%;top:34%;--rot:5deg;font-size:52px}.rainbow{left:57%;top:67%;--rot:-5deg;font-size:58px}.star{left:82%;top:69%;--rot:7deg;font-size:44px}
+.drag-hint{position:absolute;right:6%;top:7%;padding:10px 14px;border:1px solid #d5e2e6;border-radius:40px;background:#fff;font:700 10px ui-monospace,monospace;letter-spacing:.08em;color:#52656b}.foot{padding:24px 7%;color:#6a777c;font:700 11px ui-monospace,monospace;letter-spacing:.08em;border-top:1px solid #dfe7e9;background:#fff}
+@media(max-width:900px){.right .pill{display:none}.nav a{padding:0 12px}.scrap{width:clamp(150px,22vw,205px)}.photo-one{left:22%}.photo-two{left:42%}.photo-three{left:64%}.photo-four{left:20%}.photo-five{left:41%}.music-card{left:62%}.sports-card{left:76%;width:clamp(135px,18vw,175px)}.note-mint{left:67%}.note-sport{left:78%}}
+@media(max-width:650px){.top{height:62px;padding:0 10px}.mark{width:38px;font-size:25px}.nav{overflow-x:auto}.nav a{gap:5px;padding:0 9px;font-size:10px}.nav .ico{font-size:16px}.right{gap:6px}.avatar{width:34px;height:34px;font-size:12px}.contact{font-size:10px;padding:9px 10px}.playground{min-height:unset;padding:35px 6% 80px}.play-heading{position:relative;left:auto;top:auto;margin:0 0 34px}.play-heading strong{font-size:25px}.drag-hint{position:relative;right:auto;top:auto;display:inline-block;margin:0 0 24px}.playground{display:flex;flex-direction:column}.scrap,.note,.sticker{position:relative;left:auto;top:auto;align-self:center;width:min(70vw,260px);margin:0 0 24px}.scrap{width:min(64vw,240px)}.photo-one{margin-left:-20%;--rot:-3deg}.photo-two{margin-left:22%;--rot:5deg}.photo-three{margin-left:-5%;--rot:4deg}.photo-four{margin-left:15%;--rot:4deg}.photo-five{margin-left:-15%;--rot:-4deg}.music-card{margin-left:15%;--rot:-5deg}.sports-card{margin-left:-15%;--rot:4deg}.note{align-self:center;margin-top:-42px;margin-bottom:10px;z-index:5;font-size:14px}.note-yellow{margin-left:15%;--rot:-2deg}.note-blue{margin-left:-5%;--rot:4deg}.note-mint{margin-left:22%;--rot:5deg}.note-pink{margin-left:-15%;--rot:-3deg}.note-music{margin-left:16%;--rot:3deg}.note-sport{margin-left:-16%;--rot:-4deg}.sticker{width:auto;margin:0 0 24px;font-size:46px}.flower{align-self:flex-end;margin-right:20%;margin-top:-16px}.heart{align-self:flex-start;margin-left:12%;margin-top:-18px}.cactus{align-self:flex-end;margin-right:16%;margin-top:-10px}.rainbow{align-self:flex-start;margin-left:18%;margin-top:-4px}.star{align-self:flex-end;margin-right:18%;margin-top:-16px}}
+@media(prefers-reduced-motion:reduce){.drag-item{transition:none}}
+
+[data-drag]{cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none}
+[data-drag-ignore]{cursor:auto;user-select:text;-webkit-user-select:text;touch-action:auto}
+.dragging-card{cursor:grabbing!important;user-select:none!important;-webkit-user-select:none!important;transition:none!important;z-index:40!important}
+</style>
+<style>
+.foot{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.foot-connect{color:inherit;text-decoration:none;font:700 12px ui-monospace,monospace;letter-spacing:.08em;border-bottom:1px solid currentColor;padding-bottom:4px}
+.foot-connect:hover{color:#1688a3}
+</style>
+<style data-eye-cursor>
+.eye-cursor{position:fixed;z-index:100000;left:0;top:0;width:48px;height:30px;display:flex;align-items:center;justify-content:center;gap:3px;pointer-events:none;opacity:0;transform:translate3d(-100px,-100px,0);transition:opacity .16s ease;will-change:transform}
+.eye-cursor.is-visible{opacity:1}
+.eye-cursor__eye{position:relative;display:block;width:20px;height:23px;border:2px solid #141719;border-radius:52% 48% 48% 52%;background:#fff;box-shadow:0 1px 0 #14171918}
+.eye-cursor__eye:nth-child(2){border-radius:48% 52% 52% 48%}
+.eye-cursor__pupil{position:absolute;left:50%;top:50%;width:7px;height:9px;border-radius:50%;background:#141719;transform:translate(calc(-50% + var(--gaze-x,0px)),calc(-50% + var(--gaze-y,0px)));transition:transform .1s cubic-bezier(.2,.7,.2,1)}
+.eye-cursor__pupil:after{content:"";position:absolute;left:1px;top:1px;width:2px;height:2px;border-radius:50%;background:#35bfdc}
+@media(pointer:fine){body.has-eye-cursor,body.has-eye-cursor *{cursor:none!important}body.has-eye-cursor input,body.has-eye-cursor textarea,body.has-eye-cursor select,body.has-eye-cursor [contenteditable="true"]{cursor:text!important}}
+@media(prefers-reduced-motion:reduce){.eye-cursor__pupil{transition:none}}
+</style>
+<style data-drag-hand-cursor>
+.eye-cursor__hand{position:absolute;right:-9px;bottom:-11px;width:24px;height:27px;opacity:0;transform:translate(-4px,4px) rotate(-16deg) scale(.72);transform-origin:bottom center;transition:opacity .14s ease,transform .18s cubic-bezier(.2,.75,.25,1);filter:drop-shadow(0 1px 1px #14171930)}
+.eye-cursor.is-drag-target .eye-cursor__hand,.eye-cursor.is-dragging .eye-cursor__hand{opacity:1;transform:translate(0,0) rotate(-8deg) scale(1)}
+.eye-cursor__hand path:not(.eye-cursor__hand-cuff){fill:#fff;stroke:#141719;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round}
+.eye-cursor__hand-cuff{fill:none;stroke:#35bfdc;stroke-width:2.6;stroke-linecap:round}
+.eye-cursor__hand-grab{display:none}
+.eye-cursor.is-dragging .eye-cursor__hand-open{display:none}
+.eye-cursor.is-dragging .eye-cursor__hand-grab{display:block}
+@media(prefers-reduced-motion:reduce){.eye-cursor__hand{transition:none}}
+</style>
+</head>
+<body><div class="eye-cursor" id="eye-cursor" aria-hidden="true"><span class="eye-cursor__eye"><i class="eye-cursor__pupil"></i></span><span class="eye-cursor__eye"><i class="eye-cursor__pupil"></i></span><svg class="eye-cursor__hand" viewBox="0 0 32 34" aria-hidden="true"><g class="eye-cursor__hand-open"><path d="M9 16V7.5a2 2 0 0 1 4 0V14 5.5a2 2 0 0 1 4 0V14 7.5a2 2 0 1 1 4 0V15 11a2 2 0 0 1 4 0v7.5c0 5.2-3.8 9-8.6 9h-1.1c-3.1 0-5.9-1.6-7.4-4.3l-3.1-5.4a2 2 0 0 1 3.5-2l2 3.2z"/><path class="eye-cursor__hand-cuff" d="m11.2 26.2 5.6 3.1"/></g><g class="eye-cursor__hand-grab"><path d="M8.5 15.5V12a2 2 0 0 1 4 0v3.5-5a2 2 0 1 1 4 0v5-4a2 2 0 1 1 4 0v4-2.5a2 2 0 0 1 4 0v6c0 5-3.5 8.5-8.2 8.5h-1.5c-3 0-5.3-1.3-7-3.8l-2.1-3a2 2 0 0 1 3.2-2.4l1.8 2.1z"/><path class="eye-cursor__hand-cuff" d="m11.2 26.2 5.6 3.1"/></g></svg></div>
+<header class="top"><a class="mark" href="vallabh-portfolio-home.html#home" aria-label="Vallabh home"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 34a19 19 0 0 1 38 0M12 34a12 12 0 0 1 24 0M19 34a5 5 0 0 1 10 0" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round"/></svg></a><nav class="nav" aria-label="Main navigation"><a href="vallabh-portfolio-home.html#home"><svg class="ico ico-home" viewBox="0 0 40 40" aria-hidden="true"><path fill="currentColor" d="M3 18 20 4l17 14v18H23V25h-6v11H3V18Z"/></svg> HOME</a><a href="vallabh-about.html"><svg class="ico ico-about" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><ellipse cx="20" cy="8" rx="4.7" ry="7.1"/><ellipse cx="20" cy="8" rx="4.7" ry="7.1" transform="rotate(60 20 20)"/><ellipse cx="20" cy="8" rx="4.7" ry="7.1" transform="rotate(120 20 20)"/><ellipse cx="20" cy="8" rx="4.7" ry="7.1" transform="rotate(180 20 20)"/><ellipse cx="20" cy="8" rx="4.7" ry="7.1" transform="rotate(240 20 20)"/><ellipse cx="20" cy="8" rx="4.7" ry="7.1" transform="rotate(300 20 20)"/></g><circle cx="20" cy="20" r="4.1" fill="white"/></svg> ABOUT</a><a href="vallabh-case-studies.html"><svg class="ico ico-case" viewBox="0 0 40 40" aria-hidden="true"><path fill="currentColor" d="M6 3h28v5c0 4.6-5.5 8-12 9.3 6.5 1.3 12 4.7 12 9.3v5c0 4.4-5.5 7.4-14 7.4S6 35.9 6 31.6v-5c0-4.6 5.5-8 12-9.3C11.5 16 6 12.6 6 8V3Z"/></svg> CASE STUDY</a><a class="active" href="#playground"><svg class="ico ico-playground" viewBox="0 0 40 40" aria-hidden="true"><path fill="currentColor" d="M3 31h9V22h9v-9h9V4h7v33H3z"/></svg> PLAYGROUND</a></nav><div class="right"><span class="pill">EN</span><span class="pill">IN</span><span class="avatar" aria-label="Vallabh">VS</span><a class="contact" href="vallabh-contact.html#contact-top">♥ &nbsp; CONTACT</a></div></header>
+<div class="ruler" aria-hidden="true"><span>0</span><span>100</span><span>200</span><span>300</span><span>400</span><span>500</span><span>600</span><span>700</span><span>800</span><span>900</span><span>1000</span><span>1100</span><span>1200</span></div>
+<main class="playground" id="playground">
+<div class="play-heading">A LITTLE SPACE TO WANDER<strong>the little things</strong></div><div class="drag-hint">DRAG ANYTHING AROUND ↗</div>
+<article class="scrap drag-item photo-one" data-drag aria-label="Decorative interior photo card"><div class="scrap-art art-room"><span class="room-table"></span><span class="room-vase"></span></div><div class="scrap-caption">a quiet corner</div></article>
+<article class="scrap drag-item photo-two" data-drag aria-label="Decorative glass still life card"><div class="scrap-art art-glass"><span class="glass-cube"></span></div><div class="scrap-caption">a moment of stillness</div></article>
+<article class="scrap drag-item photo-three" data-drag aria-label="Decorative blue sky card"><div class="scrap-art art-sky"><span class="sky-window"></span></div><div class="scrap-caption">look up</div></article>
+<article class="scrap drag-item photo-four" data-drag aria-label="Decorative warm color study card"><div class="scrap-art art-warm"><span class="warm-sphere"></span><span class="warm-object"></span></div><div class="scrap-caption">color break</div></article>
+<article class="scrap drag-item photo-five" data-drag aria-label="Decorative botanical card"><div class="scrap-art art-green"><span class="leaf one"></span><span class="leaf two"></span><span class="leaf three"></span></div><div class="scrap-caption">tiny moments</div></article>
+<article class="scrap drag-item music-card" data-drag aria-label="Music card"><div class="scrap-art music-art"><span class="record"></span><span class="music-label">♫ MUSIC ♫</span></div><div class="scrap-caption">a playlist for every mood</div></article>
+<article class="scrap drag-item sports-card" data-drag aria-label="Sports card"><div class="scrap-art sport-art"><span class="sport-track"></span><span class="sport-ball"></span></div><div class="scrap-caption">SPORTS · play, pause, repeat</div></article>
+<div class="note note-yellow drag-item" data-drag>nothing big, still feels nice</div><div class="note note-blue drag-item" data-drag>brains messy, but it’s okay</div><div class="note note-mint drag-item" data-drag>good weather</div><div class="note note-pink drag-item" data-drag>random color</div><div class="note note-music drag-item" data-drag>soundtrack for today</div><div class="note note-sport drag-item" data-drag>one more round!</div>
+<div class="sticker flower drag-item" data-drag aria-label="Flower sticker">💐</div><div class="sticker heart drag-item" data-drag aria-label="Heart sticker">💗</div><div class="sticker cactus drag-item" data-drag aria-label="Cactus sticker">🌵</div><div class="sticker rainbow drag-item" data-drag aria-label="Rainbow sticker">🌈</div><div class="sticker star drag-item" data-drag aria-label="Sparkle sticker">✦</div>
+</main>
+<footer class="foot">VALLABH SINHA · PORTFOLIO · KEEP WANDERING, KEEP WONDERING.<a class="foot-connect" href="vallabh-contact.html#contact-top">LET’S CONNECT ↗</a></footer>
+<script>
+(function(){
+  let activeDrag = null;
+  let cancelledClick = null;
+  const margin = 12;
+  const topClearance = 76;
+
+  function getBounds(target){
+    const flush = target.hasAttribute('data-drag-flush');
+    const edge = flush ? 0 : margin;
+    const bounds = {left: edge, top: flush ? 72 : Math.max(edge, topClearance), right: window.innerWidth - edge, bottom: window.innerHeight - edge};
+    let ancestor = target.parentElement;
+    while(ancestor && ancestor !== document.documentElement){
+      const style = getComputedStyle(ancestor);
+      const rect = ancestor.getBoundingClientRect();
+      if(style.overflowX !== 'visible'){
+        bounds.left = Math.max(bounds.left, rect.left);
+        bounds.right = Math.min(bounds.right, rect.right);
+      }
+      if(style.overflowY !== 'visible'){
+        bounds.top = Math.max(bounds.top, rect.top);
+        bounds.bottom = Math.min(bounds.bottom, rect.bottom);
+      }
+      ancestor = ancestor.parentElement;
+    }
+    return bounds;
+  }
+
+  function clampDelta(start, size, low, high, delta){
+    const span = Math.max(0, high - low);
+    if(size > span) return 0;
+    const minPosition = low;
+    const maxPosition = high - size;
+    const proposed = start + delta;
+    return Math.max(minPosition, Math.min(maxPosition, proposed)) - start;
+  }
+
+  function applyDrag(drag, pointerX, pointerY){
+    const bounds = getBounds(drag.target);
+    const rect = drag.startRect;
+    const dx = clampDelta(rect.left, rect.width, bounds.left, bounds.right, pointerX - drag.startX);
+    const dy = clampDelta(rect.top, rect.height, bounds.top, bounds.bottom, pointerY - drag.startY);
+    const x = drag.baseX + dx;
+    const y = drag.baseY + dy;
+    drag.target.dataset.dragX = String(x);
+    drag.target.dataset.dragY = String(y);
+    drag.target.style.translate = x + 'px ' + y + 'px';
+    if(Math.abs(dx) + Math.abs(dy) > 5) drag.moved = true;
+  }
+
+  document.addEventListener('pointerdown', function(event){
+    if(event.button !== undefined && event.button !== 0) return;
+    const item = event.target.closest('[data-drag]');
+    if(!item) return;
+    if(event.target.closest('[data-drag-ignore]')) return;
+    const interactive = event.target.closest('a,button,input,textarea,select,[contenteditable="true"]');
+    if(interactive && interactive !== item) return;
+    const target = item.dataset.dragTarget ? document.querySelector(item.dataset.dragTarget) : item;
+    if(!target) return;
+    const rect = target.getBoundingClientRect();
+    activeDrag = {
+      item: item,
+      target: target,
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      baseX: parseFloat(target.dataset.dragX || '0'),
+      baseY: parseFloat(target.dataset.dragY || '0'),
+      startRect: rect,
+      moved: false,
+      oldZ: target.style.zIndex
+    };
+    item.setPointerCapture(event.pointerId);
+    target.classList.add('dragging-card');
+    target.style.zIndex = '40';
+  }, true);
+
+  document.addEventListener('pointermove', function(event){
+    if(!activeDrag || event.pointerId !== activeDrag.pointerId) return;
+    applyDrag(activeDrag, event.clientX, event.clientY);
+  }, true);
+
+  function finishDrag(event){
+    if(!activeDrag || (event && event.pointerId !== activeDrag.pointerId)) return;
+    const drag = activeDrag;
+    if(drag.moved){
+      cancelledClick = {item: drag.item, x: event ? event.clientX : drag.startX, y: event ? event.clientY : drag.startY, until: Date.now() + 500};
+    }
+    drag.target.classList.remove('dragging-card');
+    drag.target.style.zIndex = drag.oldZ;
+    if(drag.item.hasPointerCapture && drag.item.hasPointerCapture(drag.pointerId)) drag.item.releasePointerCapture(drag.pointerId);
+    activeDrag = null;
+  }
+
+  document.addEventListener('pointerup', finishDrag, true);
+  document.addEventListener('pointercancel', finishDrag, true);
+  document.addEventListener('click', function(event){
+    if(!cancelledClick) return;
+    const ignored = cancelledClick;
+    cancelledClick = null;
+    if(Date.now() <= ignored.until && (event.target === ignored.item || ignored.item.contains(event.target)) && Math.abs(event.clientX - ignored.x) < 18 && Math.abs(event.clientY - ignored.y) < 18){
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
+  }, true);
+
+  document.addEventListener('dragstart', function(event){
+    if(event.target.closest('[data-drag]')) event.preventDefault();
+  });
+
+  window.addEventListener('resize', function(){
+    document.querySelectorAll('[data-drag][data-drag-x], [data-drag-target][data-drag-x]').forEach(function(item){
+      const target = item.dataset.dragTarget ? document.querySelector(item.dataset.dragTarget) : item;
+      if(!target) return;
+      const rect = target.getBoundingClientRect();
+      const bounds = getBounds(target);
+      const dx = clampDelta(rect.left, rect.width, bounds.left, bounds.right, 0);
+      const dy = clampDelta(rect.top, rect.height, bounds.top, bounds.bottom, 0);
+      if(dx || dy){
+        const x = parseFloat(target.dataset.dragX || '0') + dx;
+        const y = parseFloat(target.dataset.dragY || '0') + dy;
+        target.dataset.dragX = String(x);
+        target.dataset.dragY = String(y);
+        target.style.translate = x + 'px ' + y + 'px';
+      }
+    });
+  });
+})();
+</script>
+<script data-eye-cursor-script>
+(function(){
+  const eyes=document.getElementById('eye-cursor');
+  if(!eyes||!window.matchMedia('(pointer:fine)').matches)return;
+  const pupils=[...eyes.querySelectorAll('.eye-cursor__pupil')];
+  let previousX=0,previousY=0,hasPrevious=false;
+  function move(event){
+    if(event.pointerType==='touch')return;
+    const editable=event.target&&event.target.closest('input,textarea,select,[contenteditable="true"]');
+    if(editable){eyes.classList.remove('is-visible');document.body.classList.remove('has-eye-cursor');return;}
+    document.body.classList.add('has-eye-cursor');
+    eyes.classList.add('is-visible');
+    eyes.style.transform='translate3d('+(event.clientX+11)+'px,'+(event.clientY+9)+'px,0)';
+    if(hasPrevious){
+      const dx=event.clientX-previousX,dy=event.clientY-previousY;
+      const length=Math.hypot(dx,dy)||1;
+      const gazeX=Math.max(-2.8,Math.min(2.8,(dx/length)*2.8));
+      const gazeY=Math.max(-2.8,Math.min(2.8,(dy/length)*2.8));
+      eyes.style.setProperty('--gaze-x',gazeX+'px');
+      eyes.style.setProperty('--gaze-y',gazeY+'px');
+    }
+    previousX=event.clientX;previousY=event.clientY;hasPrevious=true;
+  }
+  document.addEventListener('pointermove',move,{passive:true});
+  document.addEventListener('pointerleave',function(){eyes.classList.remove('is-visible');document.body.classList.remove('has-eye-cursor');},{passive:true});
+  document.addEventListener('pointerover',function(event){
+    if(event.target&&event.target.closest('input,textarea,select,[contenteditable="true"]')){
+      eyes.classList.remove('is-visible');document.body.classList.remove('has-eye-cursor');
+    }
+  },{passive:true});
+})();
+</script>
+<script data-drag-hand-cursor-script>
+(function(){
+  const cursor=document.getElementById('eye-cursor');
+  if(!cursor||!window.matchMedia('(pointer:fine)').matches)return;
+  const ignored='[data-drag-ignore],a,button,input,textarea,select,[contenteditable="true"]';
+  let dragging=false,pointerId=null;
+  function draggableAt(target){
+    if(!target||!target.closest||target.closest(ignored))return false;
+    return !!target.closest('[data-drag]');
+  }
+  function syncTarget(target){cursor.classList.toggle('is-drag-target',draggableAt(target));}
+  document.addEventListener('pointermove',function(event){
+    if(event.pointerType==='touch')return;
+    if(!dragging)syncTarget(document.elementFromPoint(event.clientX,event.clientY)||event.target);
+  },{passive:true});
+  document.addEventListener('pointerover',function(event){if(!dragging)syncTarget(event.target);},{passive:true});
+  document.addEventListener('pointerdown',function(event){
+    if(event.pointerType==='touch'||(event.button!==undefined&&event.button!==0)||!draggableAt(event.target))return;
+    dragging=true;pointerId=event.pointerId;cursor.classList.add('is-dragging');
+  },true);
+  function release(event){
+    if(!dragging||(event&&pointerId!==null&&event.pointerId!==pointerId))return;
+    dragging=false;pointerId=null;cursor.classList.remove('is-dragging');
+    if(event&&Number.isFinite(event.clientX)&&Number.isFinite(event.clientY))syncTarget(document.elementFromPoint(event.clientX,event.clientY)||event.target);
+    else cursor.classList.remove('is-drag-target');
+  }
+  document.addEventListener('pointerup',release,true);
+  document.addEventListener('pointercancel',release,true);
+  document.addEventListener('pointerleave',function(){cursor.classList.remove('is-drag-target','is-dragging');dragging=false;pointerId=null;},{passive:true});
+})();
+</script>
+</body></html>
